@@ -1,0 +1,22 @@
+name: needlenet
+channels:
+  - conda-forge
+  - defaults
+  - pytorch
+dependencies:
+  - python=3.8
+  - matplotlib
+  - numpy
+  - scipy
+  - Pillow
+  - pytorch=1.11
+  - torchvision
+  - cudatoolkit=11.3
+  - tqdm
+  - wandb
+  - natsort
+  - h5py
+  - pip
+  pip:
+    - opencv-python
+    - reedmuller
