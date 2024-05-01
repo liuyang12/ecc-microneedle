@@ -10,8 +10,9 @@ from scipy.linalg import fractional_matrix_power
 import torch
 from binnet import predict_binarization_from_raw_image
 
+from packaging.version import Version
 from scipy import __version__ as scipy_version
-if scipy_version >= '1.8':
+if Version(scipy_version) >= Version('1.8'):
     from scipy.io.matlab import matfile_version
 else:
     from scipy.io.matlab.mio import _open_file
@@ -19,7 +20,7 @@ else:
 
 
 def check_matfile_version(matfile: str):
-    if scipy_version >= '1.8':
+    if Version(scipy_version) >= Version('1.8'):
         return matfile_version(matfile, appendmat=True)[0]
     else:
         return get_matfile_version(_open_file(matfile, appendmat=True)[0])[0]
